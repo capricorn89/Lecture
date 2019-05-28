@@ -13,24 +13,24 @@
 
 ## III. Project (3~5주차 예상)
 
-### 0. Intro
+#### 0. Intro
 - Pandas?
 - import pandas as pd
 
-### 1. Import Data (API, Excel 등을 이용한 데이터 로드)
+#### 1. Import Data (API, Excel 등을 이용한 데이터 로드)
 - read_excel
 
-### 2. Data Manipulation I 
+#### 2. Data Manipulation I 
 - Indexing & Slicing (loc, iloc, isin, where..) -->  날짜, 종목 이름 등으로 데이터 뽑아내기
 - Datetime & Resample  --> 시계열 데이터를 다루기 위한 툴
 - Merge & Concatenation --> 두 개의 테이블 병합
 
-### 3. Data Manipulation II 
+#### 3. Data Manipulation II 
 - nlargest, nsmallest, rank --> 특정 열 기준으로 줄세우기, 큰거 N개, 작은거 N개 고르기
 - Rolling-mean --> 이동평균 등을 계산
 - Aggregation (apply..)  --> 테이블 단위로 한꺼번에 함수 적용
 
-### 4. Plotting (생략 가능)
+#### 4. Plotting (생략 가능)
 
 
 
