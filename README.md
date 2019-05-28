@@ -6,12 +6,10 @@
 ## I. To-do
 * 1999년 3분기부터 2019년 1분기까지 데이터를 가지고, 2000년부터 매분기 둘째 달 말을 기준으로, 최근 PER가 최근 5년 평균보다 낮은 종목 30개를 골라서 투자할 경우의 누적 성과 계산 --> Time Series Data
 
-## II. Basics (1~3주차 예상)
-
+## II. Basics (1~2주차 예상)
 * Anaconda, Spyder, Jupyter
 * Loop, Condition, Function
-* Import Packages (Numpy, Pandas)
-
+* Packages (Numpy, Pandas)
 
 ## III. Project (3~5주차 예상)
 
