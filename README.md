@@ -8,11 +8,9 @@
 
 ## II. Basics (1~3주차 예상)
 
-### 0. Anaconda, Spyder, Jupyter
-### 1. Loop, Condition, Function
-### 2. Import Packages (Numpy, Pandas)
-
-
+* Anaconda, Spyder, Jupyter
+* Loop, Condition, Function
+* Import Packages (Numpy, Pandas)
 
 
 ## III. Project (3~5주차 예상)
