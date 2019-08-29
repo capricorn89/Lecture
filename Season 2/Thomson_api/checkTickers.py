@@ -15,7 +15,7 @@ import os, inspect
 path = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
 os.chdir(path)
 
-tickers = pd.read_excel('tickerList.xlsx')
+tickers = pd.read_excel('tickerList_2.xlsx')
 tickers = tickers[tickers['ticker'] != 'DUMMY']
 
 # For Eikon 
@@ -30,3 +30,42 @@ tickers = tickers[tickers['ticker'] != 'DUMMY']
 #        df_list[ticker] = df
 #    except:
 #        pass
+
+# For DataStream
+import DatastreamDSWS as DSWS
+
+ds = DSWS.Datastream(username = 'ZHSC115', password = 'INGOT843')
+
+df_list_2 = []
+na_ticker = []
+error_ticker = []
+for i in range(len(tickers)):
+    ticker = list(np.squeeze(tickers['ticker']))[i]
+    flds = list(np.squeeze(tickers['field']))[i]
+    try:
+        df =ds.get_data(ticker, fields = ['X'], start="-180D", end="-0D", freq="M")
+        if df.shape[1] == 3:
+            na_ticker.append(ticker)
+            pass
+        else:
+            df.columns = [ticker]
+            df_list_2.append(df)
+            print(ticker)
+    except:
+        error_ticker.append(ticker)
+        pass
+
+final_df = pd.concat(df_list_2,axis=1).stack().reset_index()
+final_df.columns = ['date', 'ticker', 'value']
+final_df.set_index('date', inplace=True)
+final_df = final_df.sort_values('date')
+final_df.to_excel('sample_DBformat.xlsx')
+
+
+final_df[final_df['ticker'] == 'USFEFRL']['value']
+
+#
+#
+
+
+
