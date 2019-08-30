@@ -34,7 +34,9 @@ tickers = tickers[tickers['ticker'] != 'DUMMY']
 # For DataStream
 import DatastreamDSWS as DSWS
 
-ds = DSWS.Datastream(username = 'ZHSC115', password = 'INGOT843')
+username_ = input("USERNAME : ")
+pw_ = input("PASSWORD : ") 
+ds = DSWS.Datastream(username = username_, password = pw_)
 
 df_list_2 = []
 na_ticker = []
@@ -43,7 +45,7 @@ for i in range(len(tickers)):
     ticker = list(np.squeeze(tickers['ticker']))[i]
     flds = list(np.squeeze(tickers['field']))[i]
     try:
-        df =ds.get_data(ticker, fields = ['X'], start="-180D", end="-0D", freq="M")
+        df =ds.get_data(ticker, fields = ['X'], start="-100D", end="-0D", freq="D")
         if df.shape[1] == 3:
             na_ticker.append(ticker)
             pass
@@ -62,7 +64,7 @@ final_df = final_df.sort_values('date')
 final_df.to_excel('sample_DBformat.xlsx')
 
 
-final_df[final_df['ticker'] == 'USFEFRL']['value']
+#final_df[final_df['ticker'] == 'USFEFRL']['value']
 
 #
 #
