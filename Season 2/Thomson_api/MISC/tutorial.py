@@ -1,9 +1,10 @@
 # -*- coding: utf-8 -*-
 """
-Created on Thu Jul  5 11:12:32 2018
+Created on Wed Aug 28 15:25:52 2019
 
-@author: check
+@author: Woojin
 """
+
 
 import eikon as ek
 import pandas as pd
