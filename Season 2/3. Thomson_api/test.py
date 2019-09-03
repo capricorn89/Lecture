@@ -22,8 +22,7 @@ pw = input("PASSWORD : ")
 
 DS = get.getData(user, pw)
 
-DS.econData('USUNCLM', '-50D', freq = 'M')
+DS.econData('KOCYLECCR', '-10Y', freq = 'M')
 
-dt, time, __ = DS.NDOR('CNCONPRCF')
+dt, time, __ = DS.NDOR('KOCYLECCR')
 
-DS.GEOGN('USCNFCONX, CNCONPRCF')
