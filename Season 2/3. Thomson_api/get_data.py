@@ -13,6 +13,7 @@ import numpy as np
 import os, inspect
 import DatastreamDSWS as DSWS
 import arrow
+import sqlite3
 
 path = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
 os.chdir(path)
@@ -59,4 +60,52 @@ class getData:
         geo = df['Value'].values        
         return geo
     
+    
+class fromDB:
+    
+    def __init__(self, DBName):
+        
+        self.DBName_ = DBName
+        self.conn = sqlite3.connect(self.DBName_)  # Database 연결 (없는 경우 자동생성)
+        self.c = self.conn.cursor()  # you can create a Cursor object and call its 
+                                     # execute() method to perform SQL commands
+        
+    def econ(self, ticker, startDate, endDate):
+        
+        '''
+        ticker : econ 에 저장된 ticker
+        startDate : int, "YYYYMMDD"
+        endDate : int, "YYYYMMDD"
+        '''
+        
+        qry = "SELECT ticker, date, value FROM econ"
+        qry += " WHERE ticker ="
+        qry += " '" + ticker + "'"
+        qry += " and date >= "
+        qry += "'" + str(startDate) + "'"
+        qry += " and date <= "
+        qry += "'" + str(endDate) + "'"
+        df = pd.read_sql_query(qry, self.conn)
+        
+        return df
+    
+    
+    def info(self, ticker):
+        
+        '''
+        ticker : econ 에 저장된 ticker
+                '''
+        
+        qry = "SELECT * FROM info"
+        qry += " WHERE ticker ="
+        qry += " '" + ticker + "'"
+        df = pd.read_sql_query(qry, self.conn)
+        
+        return df        
+        
+    
+    
+        
+        
+        
     

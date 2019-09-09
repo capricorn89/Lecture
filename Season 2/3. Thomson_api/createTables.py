@@ -13,14 +13,14 @@ import pandas as pd
 path = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
 os.chdir(path)
 
-conn = sqlite3.connect('DB_ver_1.0.db')  # Database 연결 (없는 경우 자동생성)
+conn = sqlite3.connect('DB_ver_1.1.db')  # Database 연결 (없는 경우 자동생성)
 c = conn.cursor()  # you can create a Cursor object and call its 
                    # execute() method to perform SQL commands
 
 #################################
 # 지표별 Value 데이터를 넣기 위한 'econ' 테이블 및  ticker별 정보를 넣기 위한 'info' 테이블 생성
 c.execute('''CREATE TABLE IF NOT EXISTS econ(
-                    date text,
+                    date INTEGER,
                     ticker text, 
                     value real,
                     PRIMARY KEY (date, ticker))''')
@@ -32,11 +32,11 @@ table명 : econ
 _____________________________________
 date        |  ticker     |  value
 _____________________________________
-2019-01-01  |  USFEFRL    |  2.00
+20190101  |  USFEFRL    |  2.00
 -------------------------------------
-2019-01-01  |  USFEFRH    |  2.25
+20190101  |  USFEFRH    |  2.25
 -------------------------------------
-2019-02-01  |  USFEFRL    |  2.25
+20190201  |  USFEFRL    |  2.25
 -------------------------------------
 '''
 
