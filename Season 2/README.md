@@ -2,7 +2,7 @@
 
 ### 2-1. DBMS (Database Management System)
 
-- 참고 링크 : https://opentutorials.org/course/3162 (생활코딩)
+- 참고 링크 (데이터베이스란?) : https://opentutorials.org/course/3162 (생활코딩)
 - 예상 소요기간 : 2~3주
 - 학습 내용
 
