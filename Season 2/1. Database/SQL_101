@@ -1,0 +1,22 @@
+SELECT * FROM econ;
+
+SELECT date FROM econ;
+
+SELECT date dt FROM econ;
+
+SELECT * FROM econ WHERE date = 20190411;
+
+SELECT * FROM econ
+WHERE date > 20190801 AND ticker = 'USFEFRH';
+
+SELECT * FROM econ 
+WHERE ticker = 'USFEFRH' ORDER BY date DESC;
+
+SELECT * FROM econ
+WHERE date > 20190801 AND ticker = 'USFEFRH'
+ORDER BY date DESC;
+
+SELECT date, ticker, value FROM econ
+WHERE date > 20190801 AND ticker = 'USFEFRH'
+ORDER BY date DESC;
+
