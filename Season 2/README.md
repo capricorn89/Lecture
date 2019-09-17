@@ -7,6 +7,8 @@
 - 학습 내용
 
 #### (1) SQL : 
+
+    - SQLite Browser : https://sqlitebrowser.org/
     - SELECT FROM WHERE
     - Table 만들기, 업데이트하기
     - 가능하다면 join, merge 까지?
