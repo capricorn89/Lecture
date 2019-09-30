@@ -4,6 +4,7 @@
 
 - 참고 링크 (데이터베이스란?) : https://opentutorials.org/course/3162 (생활코딩)
 - 다운로드 링크 (SQLite) :  https://sqlitebrowser.org/
+- 스터디 자료 (SQLite) : https://www.sqlitetutorial.net/
 - 예상 소요기간 : 2~3주
 - 학습 내용
 
